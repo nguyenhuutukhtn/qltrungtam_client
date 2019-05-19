@@ -199,6 +199,10 @@
     <Resource Include="Resources\LOGO_WEB_DONG_DO.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{ff4466e4-6737-4843-a007-d078fdec8c0b}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{718246d7-dd1a-4843-82d0-1359f364962b}</Project>
       <Name>DTO</Name>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DTO;
+using BUS;
 
 namespace EnglishCenterApp.View
 {
@@ -21,12 +22,16 @@ namespace EnglishCenterApp.View
     public partial class NewStudentForm : Window
     {
         RadioButton mPhaiRadioButton;
+
         public delegate void DataChangedEventHandler(object sender, EventArgs e);
         public event DataChangedEventHandler DataChanged;
+
+        HocVienBUS mHocVienBUS;
 
         public NewStudentForm()
         {
             InitializeComponent();
+            mHocVienBUS = new HocVienBUS();
 
             //Show current date
             tb_date.Text = DateTime.Today.ToShortDateString();
@@ -85,10 +90,15 @@ namespace EnglishCenterApp.View
 
             HocVien hv = new HocVien(0, ten, ngaySinh.ToString(), lop, phai, soDT, email, truong, sdtPhuHuynh, hoTenPhuHuynh);
 
-            //if (!mHocVienBUS.insertHocVien(hv))
-            //{
-            //    MessageBox.Show("Thêm học viên thất bại!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
+            if (!mHocVienBUS.insertHocVien(hv))
+            {
+                MessageBox.Show("Thêm học viên thất bại!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                MessageBox.Show("Thông tin học viên đã được lưu lại", "Trung tâm Tú đẹp trai");
+
+            }
             //#endregion
 
             //#region SaveThoiGianRanh

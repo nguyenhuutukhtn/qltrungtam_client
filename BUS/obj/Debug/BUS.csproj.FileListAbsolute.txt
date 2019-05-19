@@ -1,0 +1,13 @@
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\bin\Debug\BUS.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\bin\Debug\BUS.pdb
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\bin\Debug\DAO.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\bin\Debug\DTO.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\bin\Debug\RestSharp.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\bin\Debug\DAO.pdb
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\bin\Debug\DTO.pdb
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\bin\Debug\RestSharp.xml
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\obj\Debug\BUS.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\BUS\obj\Debug\BUS.pdb

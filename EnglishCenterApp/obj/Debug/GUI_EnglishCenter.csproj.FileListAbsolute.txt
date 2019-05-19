@@ -39,3 +39,11 @@ C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenter
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\GUI_EnglishCenter.csproj.GenerateResource.Cache
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\EnglishCenterApp.exe
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\EnglishCenterApp.pdb
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\BUS.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\DAO.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\RestSharp.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\BUS.pdb
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\DAO.pdb
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\RestSharp.xml
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\Newtonsoft.Json.xml

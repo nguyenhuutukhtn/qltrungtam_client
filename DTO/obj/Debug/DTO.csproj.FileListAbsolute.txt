@@ -2,3 +2,4 @@ C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DTO\bin\Debug
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DTO\bin\Debug\DTO.pdb
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DTO\obj\Debug\DTO.dll
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DTO\obj\Debug\DTO.pdb
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
