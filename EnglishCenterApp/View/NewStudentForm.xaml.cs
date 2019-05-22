@@ -21,17 +21,17 @@ namespace EnglishCenterApp.View
     /// </summary>
     public partial class NewStudentForm : Window
     {
-        RadioButton mPhaiRadioButton;
+        RadioButton genderRadioButton;
 
         public delegate void DataChangedEventHandler(object sender, EventArgs e);
         public event DataChangedEventHandler DataChanged;
 
-        HocVienBUS mHocVienBUS;
+        StudentBUS mStudentBUS;
 
         public NewStudentForm()
         {
             InitializeComponent();
-            mHocVienBUS = new HocVienBUS();
+            mStudentBUS = new StudentBUS();
 
             //Show current date
             tb_date.Text = DateTime.Today.ToShortDateString();
@@ -39,39 +39,39 @@ namespace EnglishCenterApp.View
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            mPhaiRadioButton = (RadioButton)sender;
+            genderRadioButton = (RadioButton)sender;
         }
 
         private void Save_btn_Click(object sender, RoutedEventArgs e)
         {
-            String ten = TenHocVien_tb.Text;
-            if (ten == "")
+            String name = tb_Name.Text;
+            if (name == "")
             {
                 MessageBox.Show("Vui lòng nhập tên học viên.");
                 return;
             }
-            DateTime? ngaySinh = NgaySinhHV_dp.SelectedDate;
-            if (ngaySinh == null)
+            DateTime? birthday = Birthday_dp.SelectedDate;
+            if (birthday == null)
             {
                 MessageBox.Show("Vui lòng nhập ngày sinh.");
                 return;
             }
-            if (mPhaiRadioButton == null)
+            if (genderRadioButton == null)
             {
                 MessageBox.Show("Vui lòng chọn giới tính.");
                 return;
             }
-            String phai = mPhaiRadioButton.Content.ToString();
-            String diaChi = DiaChi_tb.Text;
-            if (diaChi == "")
-            {
-                MessageBox.Show("Vui lòng điền địa chỉ");
-                return;
-            }
+            String gender = genderRadioButton.Content.ToString();
+            //String address = tb_Address.Text;
+            //if (diaChi == "")
+            //{
+            //    MessageBox.Show("Vui lòng điền địa chỉ");
+            //    return;
+            //}
 
-            String soDT = SoDT_tb.Text;
+            String phoneNum = tb_PhoneNum.Text;
             //if (!Regex.Match(soDT, @"^(\d[0-9]{9,11})$").Success)
-            if (soDT == "")
+            if (phoneNum == "")
             {
                 MessageBox.Show("Vui lòng điền số điện thoại", "Thông báo");
                 return;
@@ -79,18 +79,18 @@ namespace EnglishCenterApp.View
 
 
             String email = Email_tb.Text;
-            String truong = Truong_tb.Text;
-            int lop;
-            if (int.TryParse(Lop_cb.Text,out lop))
+            String school = tb_School.Text;
+            int grade;
+            if (int.TryParse(cb_Grade.Text,out grade))
             {
-                lop = int.Parse(Lop_cb.Text);
+                grade = int.Parse(cb_Grade.Text);
             }
-            String sdtPhuHuynh = SDTPhuHuynh_tb.Text;
-            String hoTenPhuHuynh = TenPhuHuynh_tb.Text;
+            String parentPhoneNum = tb_ParentPhoneNum.Text;
+            String parentName = tb_ParentName.Text;
 
-            HocVien hv = new HocVien(0, ten, ngaySinh.ToString(), lop, phai, soDT, email, truong, sdtPhuHuynh, hoTenPhuHuynh);
+            Student st = new Student(0, name, birthday.ToString(), grade, gender, phoneNum, email, school, parentName, parentPhoneNum);
 
-            if (!mHocVienBUS.insertHocVien(hv))
+            if (!mStudentBUS.insertNewStudent(st))
             {
                 MessageBox.Show("Thêm học viên thất bại!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -154,6 +154,85 @@ namespace EnglishCenterApp.View
             //    handler(this, new EventArgs());
             //}
 
+        }
+
+        private void btn_cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_ChooseCourse_Click(object sender, RoutedEventArgs e)
+        {
+            //popup_xepLichThi.IsOpen = false;
+            //popup_xepLop.IsOpen = true;
+
+            //ThoiGianHocBUS thoiGianHocBus = new ThoiGianHocBUS();
+            //if (mListLopDangMo == null)
+            //{
+            //    mListLopDangMo = new List<Lop_ThoiGianHoc>();
+            //    foreach (LopHoc lop in MainWindow.listLopDangMo)
+            //    {
+            //        mListLopDangMo.Add(new Lop_ThoiGianHoc(lop, thoiGianHocBus.getThoiGianHocCuaLop(lop.MMaLop)));
+            //    }
+            //}
+
+            //mListLopThoiGian = new List<Lop_ThoiGianHoc>();
+            //List<CheckBox> listChecked = mListThoiGianRanh.FindAll(i => i.IsChecked == true);
+            //List<Lop_ThoiGianHoc> listLopDungCTH = new List<Lop_ThoiGianHoc>();
+            //foreach (Lop_ThoiGianHoc lop in mListLopDangMo)
+            //{
+            //    if (CTMuonHoc_cb.Text != "")
+            //    {
+            //        String maCTMuonHoc = mChuongTrinhBUS.getMaCTFromTenCT(CTMuonHoc_cb.SelectedValue.ToString());
+            //        if (lop.LopHoc.MMaCTHoc.Equals(maCTMuonHoc))
+            //        {
+            //            listLopDungCTH.Add(lop);
+            //            String thuCa;
+            //            String thu;
+            //            String ca;
+            //            for (int i = 0; i < listChecked.Count; i++)
+            //            {
+            //                thuCa = listChecked[i].Name;
+            //                thu = thuCa.Substring(0, thuCa.IndexOf('_'));
+            //                ca = thuCa.Substring(thuCa.IndexOf('_') + 1);
+            //                foreach (ThoiGianHoc tgh in lop.ListThoiGianHoc)
+            //                {
+            //                    if (tgh.MMaCa.Equals(ca) && tgh.MMaThu.Equals(thu))
+            //                        lop.SoCaDungYeuCau++;
+            //                }
+            //            }
+            //            if (lop.SoCaDungYeuCau > 0)
+            //                mListLopThoiGian.Add(lop);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        String thuCa;
+            //        String thu;
+            //        String ca;
+            //        for (int i = 0; i < listChecked.Count; i++)
+            //        {
+            //            thuCa = listChecked[i].Name;
+            //            thu = thuCa.Substring(0, thuCa.IndexOf('_'));
+            //            ca = thuCa.Substring(thuCa.IndexOf('_') + 1);
+            //            foreach (ThoiGianHoc tgh in lop.ListThoiGianHoc)
+            //            {
+            //                if (tgh.MMaCa.Equals(ca) && tgh.MMaThu.Equals(thu))
+            //                    lop.SoCaDungYeuCau++;
+            //            }
+            //        }
+            //        if (lop.SoCaDungYeuCau > 0)
+            //            mListLopThoiGian.Add(lop);
+            //    }
+            //}
+            //if (mListLopThoiGian.Count > 0)
+            //    lv_popup_xepLop.ItemsSource = mListLopThoiGian;
+            //else if (listLopDungCTH.Count > 0)
+            //    lv_popup_xepLop.ItemsSource = listLopDungCTH;
+            //else
+            //    lv_popup_xepLop.ItemsSource = mListLopDangMo;
+            //lv_popup_xepLop.SelectedIndex = lv_xepLop_selectedIndex;
+            //lv_popup_xepLop.Focus();
         }
     }
 }

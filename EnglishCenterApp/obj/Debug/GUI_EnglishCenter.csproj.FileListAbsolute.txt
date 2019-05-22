@@ -26,13 +26,11 @@ C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenter
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\GUI_EnglishCenter.csprojResolveAssemblyReference.cache
-C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\LeTanMainWindowGUI.g.cs
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\NewStudentForm.g.cs
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\App.g.cs
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\EnglishCenterApp_MarkupCompile.cache
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\EnglishCenterApp_MarkupCompile.lref
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\App.baml
-C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\LeTanMainWindowGUI.baml
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\NewStudentForm.baml
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\EnglishCenterApp.g.resources
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\EnglishCenterApp.Properties.Resources.resources
@@ -47,3 +45,7 @@ C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenter
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\DAO.pdb
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\RestSharp.xml
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\ReceptionistWindow.g.cs
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\ReceptionistWindow.baml
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\EditStudentDialog.g.cs
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\EditStudentDialog.baml

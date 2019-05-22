@@ -103,11 +103,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\LeTanMainWindowGUI.xaml.cs">
-      <DependentUpon>LeTanMainWindowGUI.xaml</DependentUpon>
+    <Compile Include="View\ReceptionistWindow.xaml.cs">
+      <DependentUpon>ReceptionistWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NewStudentForm.xaml.cs">
       <DependentUpon>NewStudentForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditStudentDialog.xaml.cs">
+      <DependentUpon>EditStudentDialog.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -142,11 +145,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="View\LeTanMainWindowGUI.xaml">
+    <Page Include="View\ReceptionistWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewStudentForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditStudentDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
