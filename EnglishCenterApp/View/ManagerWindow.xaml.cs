@@ -13,26 +13,41 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DTO;
 using BUS;
-using System.Text.RegularExpressions;
 
 namespace EnglishCenterApp.View
 {
     /// <summary>
-    /// Interaction logic for MainWindowGUI.xaml
+    /// Interaction logic for ManagerWindow.xaml
     /// </summary>
-    public partial class ReceptionistWindow : Window
+    public partial class ManagerWindow : Window
     {
         public static List<Student> listAllStudent;
         public static List<Student> listFilterStudent;
-
-        public ReceptionistWindow()
+        public static List<Course> listOpeningCourse;
+        public static List<Course> listAllCourse;
+        public ManagerWindow()
         {
             InitializeComponent();
-
             listAllStudent = new StudentBUS().getAllStudent();
             tb_numberOfNewStudent.Text = listAllStudent.Count.ToString();
             tb_home_NumberOfStudent.Text = listAllStudent.Count.ToString();
+            updateListAllCourse();
+            updateOpeningCourse();
+            
         }
+
+        private void updateListAllCourse()
+        {
+            listAllCourse = new CourseBUS().getListAllCourse();
+            lv_tabCourse_listCourse.ItemsSource = listAllCourse;
+    
+        }
+
+        private void updateOpeningCourse()
+        {
+            
+        }
+
         private void btn_AddStudent_Click(object sender, RoutedEventArgs e)
         {
             NewStudentForm studentForm = new NewStudentForm();
@@ -101,7 +116,7 @@ namespace EnglishCenterApp.View
         private void btn_filterStudent_Click(object sender, RoutedEventArgs e)
         {
             listFilterStudent = new List<Student>();
-            if (tb_filterStudent_studentId.Text != ""&& tb_filterStudent_studentName.Text.Equals(""))
+            if (tb_filterStudent_studentId.Text != "" && tb_filterStudent_studentName.Text.Equals(""))
             {
                 if (tb_filterStudent_studentId.Text != "")
                 {
@@ -117,9 +132,9 @@ namespace EnglishCenterApp.View
                     lv_listStudent.ItemsSource = listFilterStudent;
                 }
             }
-            else if (tb_filterStudent_studentName.Text != ""&& tb_filterStudent_studentId.Text.Equals(""))
+            else if (tb_filterStudent_studentName.Text != "" && tb_filterStudent_studentId.Text.Equals(""))
             {
-                for(int i=0;i<listAllStudent.Count;i++)
+                for (int i = 0; i < listAllStudent.Count; i++)
                 {
                     if (listAllStudent[i].Name.Contains(tb_filterStudent_studentName.Text.ToString()))
                     {
@@ -129,67 +144,19 @@ namespace EnglishCenterApp.View
 
                 lv_listStudent.ItemsSource = listFilterStudent;
             }
-            else if (tb_filterStudent_studentName.Text != "" && tb_filterStudent_studentId.Text!="")
+            else if (tb_filterStudent_studentName.Text != "" && tb_filterStudent_studentId.Text != "")
             {
                 for (int i = 0; i < listAllStudent.Count; i++)
                 {
-                    if (listAllStudent[i].Name.Contains(tb_filterStudent_studentName.Text.ToString())&&(listAllStudent[i].Id+"").Contains(tb_filterStudent_studentId.Text))
+                    if (listAllStudent[i].Name.Contains(tb_filterStudent_studentName.Text.ToString()) && (listAllStudent[i].Id + "").Contains(tb_filterStudent_studentId.Text))
                     {
                         listFilterStudent.Add(listAllStudent[i]);
                     }
                     lv_listStudent.ItemsSource = listFilterStudent;
                 }
             }
-               
-            //    else
-            //    {
-            //        foreach (HocVien hv in listAllStudent)
-            //        {
-            //            if ((Regex.IsMatch(ConvertToUnSign(hv.MTenHocVien), ConvertToUnSign(tb_filterHV_ten.Text), RegexOptions.IgnoreCase))
-            //            && (hv.MSdt.Contains(tb_filterHV_sdt.Text))
-            //            && (Regex.IsMatch(hv.MEmail, tb_filterHV_email.Text)))
-            //            {
-            //                listFilterHv.Add(new HocVien_Lop(hv, lopBus.getLopMoiNhatByMaHV(hv.MMaHocVien)));
-            //            }
-            //        }
 
-            //        if (tb_filterHV_ten.Text != "" || tb_filterHV_sdt.Text != "" || tb_filterHV_email.Text != "")
-            //            lv_dsHocVien.ItemsSource = listFilterHv;
-            //        else
-            //            lv_dsHocVien.ItemsSource = listHvDangHocWLop;
-            //    }
-
-            //}
-            ////else
-            ////{
-            //    List<HocVien> listFilter = new List<HocVien>();
-            //    if (tb_filterHV_maHv.Text != "")
-            //    {
-            //        foreach (HocVien hv in listFilterHv)
-            //        {
-            //            if (hv.HocVien.MMaHocVien.Contains(tb_filterHV_maHv.Text))
-            //                listFilter.Add(hv);
-            //        }
-            //        lv_dsHocVien.ItemsSource = listFilter;
-            //    }
-            //    else
-            //    {
-            //        foreach (HocVien_Lop hv in listFilterHv)
-            //        {
-            //            if ((Regex.IsMatch(ConvertToUnSign(hv.HocVien.MTenHocVien), ConvertToUnSign(tb_filterHV_ten.Text), RegexOptions.IgnoreCase))
-            //                && (hv.HocVien.MSdt.Contains(tb_filterHV_sdt.Text))
-            //                && (Regex.IsMatch(hv.HocVien.MEmail, tb_filterHV_email.Text)))
-            //            {
-            //                listFilter.Add(hv);
-            //            }
-
-            //            if (tb_filterHV_ten.Text != "" || tb_filterHV_sdt.Text != "" || tb_filterHV_email.Text != "")
-            //                lv_dsHocVien.ItemsSource = listFilter;
-            //            else
-            //                lv_dsHocVien.ItemsSource = listFilterHv;
-            //        }
-            //    }
-            //}
+           
         }
     }
 }

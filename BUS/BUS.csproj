@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="StudentBUS.cs" />
-    <Compile Include="KhoaHocBUS.cs" />
+    <Compile Include="CourseBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

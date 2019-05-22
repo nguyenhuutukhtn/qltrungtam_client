@@ -56,8 +56,6 @@
         <RadioButton Checked="RadioButton_Checked" Grid.Row="2" Grid.Column="2" Content="Nam" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" Height="18" Width="47"/>
         <RadioButton Checked="RadioButton_Checked" Grid.Row="2" Grid.Column="2" Content="Nữ" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="20,0,20,10" Height="18" Width="38"/>
 
-        <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,0,10,10" Text="Địa chỉ" VerticalAlignment="Bottom" FontSize="15" Height="20"/>
-        <TextBox Name="DiaChi_tb" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="0, 0, 100, 5" Height="25"/>
 
         <Grid Grid.Row="4" Grid.ColumnSpan="4">
             <Grid.RowDefinitions>

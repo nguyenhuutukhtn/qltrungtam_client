@@ -1,4 +1,4 @@
-﻿<Window x:Class="EnglishCenterApp.View.ReceptionistWindow"
+﻿<Window x:Class="EnglishCenterApp.View.ManagerWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,7 +9,7 @@
         xmlns:local="clr-namespace:EnglishCenterApp.View"
         mc:Ignorable="d"
         Title="Trung tâm Anh ngữ NHT" Height="600" Width="1120"
-        WindowState="Maximized"  Background="#F9F9F9" Icon="/Resources/ic_apple.png" >
+        WindowState="Maximized"  Background="#F9F9F9" Icon="/Resources/ic_apple.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -583,7 +583,7 @@
                         <TextBlock Grid.Column="1" Background="Red" Margin="1 0 -1 0" Padding="5 5 4 6" VerticalAlignment="Center" 
                                        FontSize="20" Cursor="Arrow" Name="tb_soLopDangMo"/>
                         <TextBlock Grid.Column="2" Background="Red" Margin="0 0 0 0" Padding="5 5 8 6" VerticalAlignment="Center" FontSize="20" Cursor="Arrow"
-                                       Text="Lớp đang mở"/>
+                                       Text="Khóa học đang mở"/>
                         <Button Name="btn_ThemLop" Grid.Column="0" Padding="0" FontSize="15"  ToolTip="Thêm lớp mới">✛</Button>
                     </Grid>
 
@@ -617,7 +617,7 @@
                             <RowDefinition Height="50"/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Margin="10" FontSize="20" Text="DANH SÁCH LỚP" Foreground="#FF4D4D4D"/>
+                        <TextBlock Grid.Row="0" Margin="10" FontSize="20" Text="DANH SÁCH KHÓA HỌC" Foreground="#FF4D4D4D"/>
                         <Grid Grid.Row="1" Margin="10" Width="300" HorizontalAlignment="Left">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
@@ -632,11 +632,13 @@
                             </Button>
                         </Grid>
 
-                        <ListView Grid.Row="2" Margin="10" Name= "lv_tabLop_dsLop" HorizontalContentAlignment="Stretch">
+                        <ListView Grid.Row="2" Margin="10" Name= "lv_tabCourse_listCourse" HorizontalContentAlignment="Stretch">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Grid Background="#FFE2E0E0" Margin="5 2 5 1">
                                         <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
                                             <RowDefinition/>
                                             <RowDefinition/>
                                             <RowDefinition/>
@@ -650,13 +652,13 @@
                                             <ColumnDefinition Width="60"/>
                                             <ColumnDefinition Width="60"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" FontSize="16" FontWeight="SemiBold" Text="{Binding Lop.MMaLop}"/>
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" FontSize="16" FontWeight="SemiBold" Text="{Binding Name}"/>
 
                                         <TextBlock Grid.Row="1" Grid.Column="0" Margin="5 5 0 0" Text="Chương trình học: "/>
-                                        <TextBlock Grid.Row="1" Grid.Column="1" Margin="5 5 0 0" FontSize="12" Text="{Binding TenChuongTrinhHoc}"/>
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Margin="5 5 0 0" FontSize="12" Text="{Binding Type}"/>
 
-                                        <TextBlock Grid.Row="3" Grid.Column="0" Margin="5 5 0 0" Text="Phòng: "/>
-                                        <TextBlock Grid.Row="3" Grid.Column="1" Margin="5 5 0 0" FontSize="12" Text="{Binding Lop.MMaPhong}"/>
+                                        <TextBlock Grid.Row="3" Grid.Column="0" Margin="5 5 0 0" Text="Học phí: "/>
+                                        <TextBlock Grid.Row="3" Grid.Column="1" Margin="5 5 0 0" FontSize="12" Text="{Binding Fee}"/>
                                         <Button Grid.Row="0" Grid.RowSpan="6" Grid.Column="2" HorizontalAlignment="Right" Margin="10 10 5 10" BorderThickness="0" 
                                                 Width="30" Height="30">
                                             <Button.Background>
@@ -670,11 +672,15 @@
                                             </Button.Background>
                                         </Button>
                                         <TextBlock Grid.Row="2" Grid.Column="0" Margin="5 0 0 0" VerticalAlignment="Bottom" Text="Giáo viên: "/>
-                                        <TextBlock Grid.Row="2" Grid.Column="1" Margin="5 0 0 0" FontSize="14" Text="{Binding TenGiangVien}"/>
+                                        <TextBlock Grid.Row="2" Grid.Column="1" Margin="5 0 0 0" FontSize="14" Text="{Binding Teacher}"/>
                                         <TextBlock Grid.Row="4" Grid.Column="0" Margin="5 0 0 0" VerticalAlignment="Bottom" Text="Ngày khai giảng: "/>
-                                        <TextBlock Grid.Row="4" Grid.Column="1" Margin="5 0 0 0" FontSize="14" Text="{Binding StringNgayKhaiGiang}"/>
+                                        <TextBlock Grid.Row="4" Grid.Column="1" Margin="5 0 0 0" FontSize="14" Text="{Binding StartDay}"/>
                                         <TextBlock Grid.Row="5" Grid.Column="0" Margin="5 0 0 5" VerticalAlignment="Bottom" Text="Ngày kết thúc: "/>
-                                        <TextBlock Grid.Row="5" Grid.Column="1" Margin="5 0 0 5" FontSize="14" Text="{Binding StringNgayKT}"/>
+                                        <TextBlock Grid.Row="5" Grid.Column="1" Margin="5 0 0 5" FontSize="14" Text="{Binding FinishDay}"/>
+                                        <TextBlock Grid.Row="6" Grid.Column="0" Margin="5 0 0 5" VerticalAlignment="Bottom" Text="Số lượng: "/>
+                                        <TextBlock Grid.Row="6" Grid.Column="1" Margin="5 0 0 5" FontSize="14" Text="{Binding StudentNumber}"/>
+                                        <TextBlock Grid.Row="7" Grid.Column="0" Margin="5 0 0 5" VerticalAlignment="Bottom" Text="Khuyến mãi: "/>
+                                        <TextBlock Grid.Row="7" Grid.Column="1" Margin="5 0 0 5" FontSize="14" Text="{Binding DiscountInfo }"/>
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -927,7 +933,7 @@
                 </Grid>
             </TabItem>
 
-            
+
 
             <TabItem Name="tabCourses">
                 <TabItem.Header>
@@ -1391,7 +1397,7 @@
                 </Grid>
             </TabItem>
 
-            
+
         </TabControl>
     </Grid>
 </Window>

@@ -49,3 +49,5 @@ C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenter
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\ReceptionistWindow.baml
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\EditStudentDialog.g.cs
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\EditStudentDialog.baml
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\ManagerWindow.g.cs
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\ManagerWindow.baml

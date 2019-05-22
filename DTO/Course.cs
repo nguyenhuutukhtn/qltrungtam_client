@@ -8,33 +8,27 @@ namespace DTO
 {
     public class Course
     {
-        
-
-        private int Id { get; set; }
-        private String Name { get; set; }
-        private String Description { get; set; }
-        private String StartDay { get; set; }
-        private int TeacherId { get; set; }
-        private String FinishDay { get; set; }
-        private String Room { get; set; }
-        private int StudentNumber { get; set; }
-        private String TimeTable { get; set; }
-        private int Fee { get; set; }
-        private String DiscountInfo { get; set; }
+        public int Id { get; set; }
+        public String Name { get; set; }
+        public String Type { get; set; }
+        public String StartDay { get; set; }
+        public String Teacher { get; set; }
+        public String FinishDay { get; set; }
+        public int StudentNumber { get; set; }
+        public int Fee { get; set; }
+        public String DiscountInfo { get; set; }
 
         public Course() { }
 
-        public Course(int id, string name, string description, string startDay, int teacherId, string finishDay, string room, int studentNumber, string timeTable, int fee, string discountInfo)
+        public Course(int id, string name, string type, string startDay, string teacher, string finishDay, int studentNumber, int fee, string discountInfo)
         {
             Id = id;
             Name = name;
-            Description = description;
+            Type = type;
             StartDay = startDay;
-            TeacherId = teacherId;
+            Teacher = teacher;
             FinishDay = finishDay;
-            Room = room;
             StudentNumber = studentNumber;
-            TimeTable = timeTable;
             Fee = fee;
             DiscountInfo = discountInfo;
         }

@@ -99,6 +99,14 @@ namespace EnglishCenterApp.View
                 MessageBox.Show("Thông tin học viên đã được lưu lại", "Trung tâm Tú đẹp trai");
 
             }
+
+            //notify change
+            DataChangedEventHandler handler = DataChanged;
+            if (handler != null)
+            {
+                handler(this, new EventArgs());
+            }
+
             //#endregion
 
             //#region SaveThoiGianRanh

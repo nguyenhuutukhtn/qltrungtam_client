@@ -28,6 +28,11 @@ namespace BUS
         {
             return mStudentDAO.getAllStudent();
         }
+
+        public bool updateStudent(Student st)
+        {
+            return mStudentDAO.updateStudent(st);
+        }
     }
 
    

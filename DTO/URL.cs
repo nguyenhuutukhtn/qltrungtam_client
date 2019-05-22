@@ -11,5 +11,7 @@ namespace DTO
         public static String root = "http://10.0.2.2:8001";
         public static String add_new_student_endpoint = "/add_new_student/";
         public static String get_all_student_endpoint = "/get_all_student/";
+        public static String update_student_endpoint = "/update_student/";
+        public static String get_all_courses_endpoint = "/get_all_courses/";
     }
 }
