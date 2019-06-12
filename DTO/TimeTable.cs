@@ -8,8 +8,7 @@ namespace DTO
 {
     public class TimeTable
     {
-        private String Day { get; set; }
-        private String Time { get; set; }
-        private String Room { get; set; }
+        public Course course { get; set; }
+        public List<String> listTime { get; set; }
     }
 }

@@ -106,6 +106,9 @@
     <Compile Include="View\ManagerWindow.xaml.cs">
       <DependentUpon>ManagerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NewCourseForm.xaml.cs">
+      <DependentUpon>NewCourseForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ReceptionistWindow.xaml.cs">
       <DependentUpon>ReceptionistWindow.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="View\ManagerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewCourseForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

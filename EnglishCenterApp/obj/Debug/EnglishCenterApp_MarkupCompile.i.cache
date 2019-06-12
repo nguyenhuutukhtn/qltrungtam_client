@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\App.xaml
-4176183924
+5-162084928
 
-12430394098
+13-1150199201
 26-1811328563
-View\ManagerWindow.xaml;View\ReceptionistWindow.xaml;View\NewStudentForm.xaml;View\EditStudentDialog.xaml;
+View\ManagerWindow.xaml;View\NewCourseForm.xaml;View\ReceptionistWindow.xaml;View\NewStudentForm.xaml;View\EditStudentDialog.xaml;
 
 True
 

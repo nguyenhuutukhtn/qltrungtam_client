@@ -13,5 +13,7 @@ namespace DTO
         public static String get_all_student_endpoint = "/get_all_student/";
         public static String update_student_endpoint = "/update_student/";
         public static String get_all_courses_endpoint = "/get_all_courses/";
+        public static String get_all_teachers_endpoint = "/get_all_teachers/";
+        public static String add_new_course_endpoint = "/add_new_course/";
     }
 }

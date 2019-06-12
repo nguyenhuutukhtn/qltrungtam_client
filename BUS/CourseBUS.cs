@@ -16,5 +16,9 @@ namespace BUS
         {
             return new CourseDAO().getAllCourse();
         }
+        public bool addNewCourse(TimeTable timetable)
+        {
+            return new CourseDAO().AddNewCourse(timetable);
+        }
     }
 }

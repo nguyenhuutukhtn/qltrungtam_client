@@ -52,6 +52,7 @@
     <Compile Include="CourseDAO.cs" />
     <Compile Include="StudentDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeacherDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

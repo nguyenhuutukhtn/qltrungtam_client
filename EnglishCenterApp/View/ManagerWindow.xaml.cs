@@ -113,6 +113,19 @@ namespace EnglishCenterApp.View
             tabControl.SelectedIndex = 1;
         }
 
+        private void btn_AddCourse_Click(object sender, RoutedEventArgs e)
+        {
+            NewCourseForm courseForm = new NewCourseForm();
+            courseForm.DataChanged += AddCourse_DataChanged;
+            courseForm.ShowDialog();
+        }
+
+        private void AddCourse_DataChanged(object sender, EventArgs e)
+        {
+            updateListAllCourse();
+            updateOpeningCourse();
+        }
+
         private void btn_filterStudent_Click(object sender, RoutedEventArgs e)
         {
             listFilterStudent = new List<Student>();
