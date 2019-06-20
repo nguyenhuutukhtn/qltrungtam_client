@@ -39,13 +39,13 @@ namespace EnglishCenterApp.View
         private void CreateTimeTableGrid()
         {
             List<String> day = new List<String>();
-            day.Add("Thứ 2");
-            day.Add("Thứ 3");
-            day.Add("Thứ 4");
-            day.Add("Thứ 5");
-            day.Add("Thứ 6");
-            day.Add("Thứ 7");
-            day.Add("Chủ nhật");
+            day.Add("Thứ Hai");
+            day.Add("Thứ Ba");
+            day.Add("Thứ Tư");
+            day.Add("Thứ Năm");
+            day.Add("Thứ Sáu");
+            day.Add("Thứ Bảy");
+            day.Add("Chủ Nhật");
 
 
             time.Add("7:30-9:00");
@@ -211,34 +211,34 @@ namespace EnglishCenterApp.View
                     String day = name.Substring(3, 1);
                     if (day.Equals("2"))
                     {
-                        day = "Thứ 2";
+                        day = "Thứ Hai";
                     }
                     if (day.Equals("3"))
                     {
-                        day = "Thứ 3";
+                        day = "Thứ Ba";
                     }
                     if (day.Equals("4"))
                     {
-                        day = "Thứ 4";
+                        day = "Thứ Tư";
                     }
                     if (day.Equals("5"))
                     {
-                        day = "Thứ 5";
+                        day = "Thứ Năm";
                     }
                     if (day.Equals("6"))
                     {
-                        day = "Thứ 6";
+                        day = "Thứ Sáu";
                     }
                     if (day.Equals("7"))
                     {
-                        day = "Thứ 7";
+                        day = "Thứ  Bảy";
                     }
                     if (day.Equals("8"))
                     {
-                        day = "Chủ nhật";
+                        day = "Chủ Nhật";
                     }
                     position = name.Substring(8, name.Length - 8);
-                    dayTime = day +": "+ time[int.Parse(position)];
+                    dayTime = day +" : "+ time[int.Parse(position)];
                     result.Add(dayTime);
                 }
             }

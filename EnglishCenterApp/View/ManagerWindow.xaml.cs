@@ -25,6 +25,7 @@ namespace EnglishCenterApp.View
         public static List<Student> listAllStudent;
         public static List<Student> listFilterStudent;
         public static List<Course> listOpeningCourse;
+        public static List<TimeTable> listTimeTable;
         public static List<Course> listAllCourse;
 
         private DateTime currentDate;
@@ -86,7 +87,58 @@ namespace EnglishCenterApp.View
             }
 
             String today = currentDate.ToString("dddd", new CultureInfo("en-US"));
+            if (today.Equals("Monday"))
+                today = "Thứ Hai";
+            if (today.Equals("TuesDay"))
+                today = "Thứ Ba";
+            if (today.Equals("Wednesday"))
+                today = "Thứ Tư";
+            if (today.Equals("Thursday"))
+                today = "Thứ Năm";
+            if (today.Equals("Friday"))
+                today = "Thứ Sáu";
+            if (today.Equals("Saturday"))
+                today = "Thứ Bảy";
+            if (today.Equals("Sunday"))
+                today = "Chủ Nhật";
             tb_currentDate.Text = today + ", " + currentDate.ToShortDateString();
+
+            int[] rows = { 1,1,1,1,1,1 };
+            foreach (TimeTable tb in listTimeTable)
+            {
+                foreach(String time in tb.listTime)
+                {
+                    int index = time.IndexOf(" : ");
+                    if (time.Substring(0, index).Equals(today))
+                    {
+                        TextBlock tbCourseName = new TextBlock();
+                        tbCourseName.Text = tb.course.Name;
+                        tbCourseName.Background = Brushes.Blue;
+                        tbCourseName.Foreground = Brushes.White;
+                        tbCourseName.TextAlignment = TextAlignment.Center;
+                        tbCourseName.Padding = new Thickness(0, 7, 0, 5);
+                        tbCourseName.ToolTip = "Giáo viên: " + tb.course.Teacher +
+                            "\nSố học viên: " + tb.course.StudentNumber +
+                            "\nLoại: " + tb.course.Type;
+                        int col=0;
+                        int row = 0;
+                        for (int i = 0; i < listTime.Count; i++)
+                        {
+                            if (listTime[i].Equals(time.Substring((index + 3), time.Length-index-3)))
+                            {
+                                col = i;
+                                row = rows[i];
+                                rows[i]++;
+                                break;
+                            }
+                        }
+                        Grid.SetColumn(tbCourseName, col);
+
+                        Grid.SetRow(tbCourseName, row);
+                        grid_TimeTable.Children.Add(tbCourseName);
+                    }
+                }
+            }
         }
 
         private void updateListAllCourse()
@@ -98,7 +150,7 @@ namespace EnglishCenterApp.View
 
         private void updateOpeningCourse()
         {
-            
+            listTimeTable = new CourseBUS().getOpeningCourses();
         }
 
         private void btn_AddStudent_Click(object sender, RoutedEventArgs e)

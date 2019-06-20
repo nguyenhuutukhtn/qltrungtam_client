@@ -13,6 +13,38 @@ namespace DAO
     public class CourseDAO
     {
         public CourseDAO() { }
+        public List<TimeTable> getOpeningCourses()
+        {
+            List<TimeTable> result = new List<TimeTable>();
+
+            var client = new RestClient(URL.root);
+
+            var request = new RestRequest(URL.get_opening_courses_endpoint, Method.GET);
+
+            try
+            {
+                EventWaitHandle Wait = new AutoResetEvent(false);
+                client.ExecuteAsync(request, response =>
+                {
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        result = Newtonsoft.Json.JsonConvert.DeserializeObject<List<TimeTable>>(response.Content);
+                        Wait.Set();
+                    }
+                    else
+                    {
+
+                    }
+                });
+                Wait.WaitOne();
+            }
+            catch (Exception error)
+            {
+                // Log
+
+            }
+            return result;
+        }
         public List<Course> getAllCourse()
         {
             List<Course> result = new List<Course>();
