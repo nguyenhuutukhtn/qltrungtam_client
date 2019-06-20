@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DTO;
 using BUS;
+using System.Globalization;
 
 namespace EnglishCenterApp.View
 {
@@ -25,6 +26,9 @@ namespace EnglishCenterApp.View
         public static List<Student> listFilterStudent;
         public static List<Course> listOpeningCourse;
         public static List<Course> listAllCourse;
+
+        private DateTime currentDate;
+        private List<String> listTime = new List<String>();
         public ManagerWindow()
         {
             InitializeComponent();
@@ -33,7 +37,56 @@ namespace EnglishCenterApp.View
             tb_home_NumberOfStudent.Text = listAllStudent.Count.ToString();
             updateListAllCourse();
             updateOpeningCourse();
+
+            currentDate = DateTime.Today;
+            initTimeTable();
+            fillTimetable();
+        }
+
+        private void initTimeTable()
+        {
+            listTime.Add("7:30-9:00");
+            listTime.Add("9:00-10:30");
+            listTime.Add("13:30-15:00");
+            listTime.Add("15:30-17:00");
+            listTime.Add("17:30-18:30");
+            listTime.Add("19:00-20:30");
+
+            grid_TimeTable.RowDefinitions.Add(new RowDefinition());
+            foreach(String time in listTime)
+            {
+                grid_TimeTable.RowDefinitions.Add(new RowDefinition());
+            }
+            for (int i = 0; i < 8; i++)
+            {
+                grid_TimeTable.ColumnDefinitions.Add(new ColumnDefinition());
+            }
+        }
+
+        private void fillTimetable()
+        {
+            grid_TimeTable.Children.Clear();
             
+           
+
+            for (int i = 0; i < listTime.Count; i++)
+            {
+                TextBlock tbTime = new TextBlock();
+                tbTime.Text = listTime[i].ToString();
+                tbTime.Foreground = Brushes.Black;
+                tbTime.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
+                tbTime.VerticalAlignment = System.Windows.VerticalAlignment.Center;
+                tbTime.FontSize = 15;
+                tbTime.TextAlignment = TextAlignment.Center;
+                tbTime.Padding = new Thickness(5, 0, 5, 0);
+                tbTime.Background = new SolidColorBrush(Color.FromRgb(226, 224, 224));
+                Grid.SetColumn(tbTime,i);
+                Grid.SetRow(tbTime, 0);
+                grid_TimeTable.Children.Add(tbTime);
+            }
+
+            String today = currentDate.ToString("dddd", new CultureInfo("en-US"));
+            tb_currentDate.Text = today + ", " + currentDate.ToShortDateString();
         }
 
         private void updateListAllCourse()

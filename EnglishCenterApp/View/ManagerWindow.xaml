@@ -587,10 +587,6 @@
                         <Button Name="btn_AddNewCourse" Grid.Column="0" Padding="0" FontSize="15"  ToolTip="Thêm lớp mới" Click="btn_AddCourse_Click">✛</Button>
                     </Grid>
 
-                    <Button Grid.Row="0" Grid.Column="1" Margin="0 20 200 0" Height="30" HorizontalAlignment="Right" Content="Ca" 
-                            Background="Red" BorderThickness="0" Name="bt_soCa" 
-                            ToolTip="Chi tiết thời gian học"/>
-
                     <Grid Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Margin="15 10 20 -10" Height="31">
                         <Grid.Effect>
                             <DropShadowEffect Color="#FFDCD8D8" ShadowDepth="2"/>
@@ -601,11 +597,7 @@
                             <ColumnDefinition Width="30"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Grid.Column="0" Background="Red" Margin="0 0 -1 0" Padding="5 5 4 6" VerticalAlignment="Center" 
-                                       FontSize="20" Cursor="Arrow" Name="tb_soPhong"/>
-                        <TextBlock Grid.Column="1" Background="Red" Margin="0 0 1 0" Padding="5 5 8 6" VerticalAlignment="Center" FontSize="20" Cursor="Arrow"
-                                       Text="Phòng học"/>
-                        <Button Name="btn_ThemPhong" Grid.Column="2" Padding="0" FontSize="15"  ToolTip="Thêm phòng học">✛</Button>
+                        
                     </Grid>
 
                     <Grid Grid.Row="1" Grid.Column="0" Background="White" Margin="20">
@@ -753,6 +745,10 @@
                     </Grid>
 
                     <Grid Grid.Row="1" Grid.Column="1" Background="White" Margin="20"  Cursor="Arrow">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="139*"/>
+                            <ColumnDefinition Width="70*"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.Effect>
                             <DropShadowEffect Color="#FFDCD8D8" ShadowDepth="2"/>
                         </Grid.Effect>
@@ -762,9 +758,9 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" Margin="10" FontSize="20" Text="THỜI KHÓA BIỂU" Foreground="#FF4D4D4D"/>
+                        <TextBlock Grid.Row="0" Margin="10" FontSize="20" Text="THỜI KHÓA BIỂU" Foreground="#FF4D4D4D" Grid.ColumnSpan="2"/>
 
-                        <Grid Grid.Row="1">
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="300"/>
@@ -790,12 +786,10 @@
                                 <Button.Background>
                                     <ImageBrush ImageSource="/Resources/rightArrow.png"/>
                                 </Button.Background>
-
                             </Button>
                         </Grid>
-
-                        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                            <Grid Grid.Row="2" Margin="5" Name="grid_TKB" ShowGridLines="True"/>
+                        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
+                            <Grid Grid.Row="2" Margin="5" Name="grid_TimeTable" ShowGridLines="True"/>
                         </ScrollViewer>
                     </Grid>
                 </Grid>
