@@ -27,6 +27,7 @@ namespace EnglishCenterApp.View
         public static List<Course> listOpeningCourse;
         public static List<TimeTable> listTimeTable;
         public static List<Course> listAllCourse;
+        public static List<Staff> listAllTeacher;
 
         private DateTime currentDate;
         private List<String> listTime = new List<String>();
@@ -38,10 +39,17 @@ namespace EnglishCenterApp.View
             tb_home_NumberOfStudent.Text = listAllStudent.Count.ToString();
             updateListAllCourse();
             updateOpeningCourse();
+            updateListTeacher();
 
             currentDate = DateTime.Today;
             initTimeTable();
             fillTimetable();
+        }
+
+        private void updateListTeacher()
+        {
+            listAllTeacher = new TeacherBUS().getListAllTeachers();
+            lv_AllTeacher.ItemsSource = listAllTeacher;
         }
 
         private void initTimeTable()
@@ -181,6 +189,13 @@ namespace EnglishCenterApp.View
             listAllStudent = new StudentBUS().getAllStudent();
             lv_listStudent.ItemsSource = listAllStudent;
         }
+        private void bt_editTeacher_click(object sender, RoutedEventArgs e)
+        {
+            Button bt = sender as Button;
+            Staff teacher = bt.DataContext as Staff;
+            NewTeacher form = new NewTeacher(teacher);
+            form.ShowDialog();
+        }
         private void btn_ShowStudentInfo_Click(object sender, RoutedEventArgs e)
         {
             popup_StudentDetail.IsOpen = false;
@@ -274,7 +289,7 @@ namespace EnglishCenterApp.View
                 }
             }
 
-           
+
         }
     }
 }

@@ -1,0 +1,11 @@
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DAO\bin\Release\DAO.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DAO\bin\Release\DAO.pdb
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DAO\bin\Release\DTO.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DAO\bin\Release\Newtonsoft.Json.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DAO\bin\Release\RestSharp.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DAO\bin\Release\DTO.pdb
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DAO\bin\Release\Newtonsoft.Json.xml
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DAO\bin\Release\RestSharp.xml
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DAO\obj\Release\DAO.csprojResolveAssemblyReference.cache
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DAO\obj\Release\DAO.dll
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\DAO\obj\Release\DAO.pdb

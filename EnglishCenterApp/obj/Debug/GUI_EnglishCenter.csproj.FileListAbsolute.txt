@@ -53,3 +53,7 @@ C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenter
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\GUI_EnglishCenter.csproj.GenerateResource.Cache
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\EnglishCenterApp.exe
 C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\EnglishCenterApp.pdb
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\LoginWindow.baml
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\LoginWindow.g.cs
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\NewTeacher.g.cs
+C:\Users\Tu\Documents\Visual Studio 2015\Projects\EnglishCenterApp\EnglishCenterApp\obj\Debug\View\NewTeacher.baml

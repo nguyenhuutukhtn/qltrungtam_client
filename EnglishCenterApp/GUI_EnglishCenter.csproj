@@ -103,11 +103,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManagerWindow.xaml.cs">
       <DependentUpon>ManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NewCourseForm.xaml.cs">
       <DependentUpon>NewCourseForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewTeacher.xaml.cs">
+      <DependentUpon>NewTeacher.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ReceptionistWindow.xaml.cs">
       <DependentUpon>ReceptionistWindow.xaml</DependentUpon>
@@ -151,11 +157,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewCourseForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewTeacher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
